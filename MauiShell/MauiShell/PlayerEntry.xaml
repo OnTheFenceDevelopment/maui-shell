@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiShell.PlayerEntry"
+             Title="Player Entry Page">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <Label HorizontalOptions="Center">Player Entry Page Here</Label>
+            <Label>Menu Item should be displayed to abandon</Label>
+            <Button Text="Start Game" Clicked="StartGame_Clicked"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

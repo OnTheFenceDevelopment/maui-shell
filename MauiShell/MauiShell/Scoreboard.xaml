@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiShell.Scoreboard">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <Label>This is the main Game page</Label>
+            <Label>There should be a menu item to Abandon the current Game and return to the root page</Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

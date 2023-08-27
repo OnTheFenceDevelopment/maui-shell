@@ -1,7 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFrameworks>net7.0-android;net7.0-ios;net7.0-maccatalyst</TargetFrameworks>
+        <TargetFrameworks>net7.0-android;</TargetFrameworks>
+        <!-- Uncomment to enable ios and mac catalyst builds -->
+        <!-- <TargetFrameworks>net7.0-ios;net7.0-maccatalyst</TargetFrameworks> -->
         <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net7.0-windows10.0.19041.0</TargetFrameworks>
         <!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
         <!-- <TargetFrameworks>$(TargetFrameworks);net7.0-tizen</TargetFrameworks> -->
@@ -15,7 +17,7 @@
         <ApplicationTitle>MauiShell</ApplicationTitle>
 
         <!-- App Identifier -->
-        <ApplicationId>com.companyname.mauishell</ApplicationId>
+        <ApplicationId>com.onthefencedevelopment.mauishell</ApplicationId>
         <ApplicationIdGuid>960E7A37-E9DF-44FB-BAA1-676C400554FC</ApplicationIdGuid>
 
         <!-- Versions -->

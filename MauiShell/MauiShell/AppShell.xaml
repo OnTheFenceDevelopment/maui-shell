@@ -4,11 +4,21 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:MauiShell"
-    Shell.FlyoutBehavior="Disabled">
+    FlyoutBehavior="Flyout">
 
     <ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
+
+    <MenuItem Text="About" Command="{Binding MenuItemClicked}" CommandParameter="AboutPage"></MenuItem>
+    
+    <ShellItem Route="PlayerEntry" FlyoutItemIsVisible="False">
+        <ShellContent ContentTemplate="{DataTemplate local:PlayerEntry}"></ShellContent>
+    </ShellItem>
+    
+    <ShellItem Route="Scoreboard" FlyoutItemIsVisible="False">
+        <ShellContent ContentTemplate="{DataTemplate local:Scoreboard}"></ShellContent>
+    </ShellItem>
 
 </Shell>
