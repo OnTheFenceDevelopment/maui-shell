@@ -12,35 +12,27 @@
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
 
-    <Shell.ItemTemplate>
+    <Shell.FlyoutContentTemplate>
         <DataTemplate>
-            <Label
-                Text="{Binding Title}"
-                FontAttributes="Bold"
-                HeightRequest="50"
-                Margin="20, 5"
-                TextTransform="Uppercase"
-                BackgroundColor="{StaticResource Primary}"
-                TextColor="WhiteSmoke"
-                HorizontalTextAlignment="Center"
-                VerticalTextAlignment="Center" />
+            <StackLayout>
+                <ListView x:Name="MenuItemsListView" 
+                          SeparatorVisibility="None" 
+                          HasUnevenRows="True"
+                          ItemsSource="{Binding SmiteMenuItems}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Padding="15,10">
+                                    <Button Text="{Binding Text}" Style="{StaticResource MenuButton}" Command="{Binding Command}" CommandParameter="{Binding CommandParameter}"></Button>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
         </DataTemplate>
-    </Shell.ItemTemplate>
+    </Shell.FlyoutContentTemplate>
 
-    <Shell.MenuItemTemplate>
-        <DataTemplate>
-            <Label
-                Text="{Binding Title}"
-                FontAttributes="Bold"
-                HeightRequest="50"
-                Margin="20, 5"
-                TextTransform="Uppercase"
-                BackgroundColor="{StaticResource Primary}"
-                TextColor="WhiteSmoke"
-                HorizontalTextAlignment="Center"
-                VerticalTextAlignment="Center" />
-        </DataTemplate>
-    </Shell.MenuItemTemplate>
 
     <MenuItem Text="About" Command="{Binding MenuItemClicked}" CommandParameter="AboutPage"></MenuItem>
 

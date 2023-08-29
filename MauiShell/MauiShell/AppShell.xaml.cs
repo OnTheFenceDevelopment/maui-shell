@@ -1,10 +1,13 @@
-﻿using System.Windows.Input;
+﻿using System.Collections.ObjectModel;
+using System.Windows.Input;
 
 namespace MauiShell;
 
 public partial class AppShell : Shell
 {
     public ICommand MenuItemClicked { get; }
+    
+    public ObservableCollection<Button> SmiteMenuItems { get; }
     
     public AppShell()
     {
@@ -19,6 +22,13 @@ public partial class AppShell : Shell
             Current.FlyoutIsPresented = false;
             await Current.GoToAsync(route);
         });
+        
+        SmiteMenuItems=new ObservableCollection<Button>
+        {
+            new () { Text = "Home", Command = MenuItemClicked, CommandParameter = nameof(MainPage) },
+            new () { Text = "About", Command = MenuItemClicked, CommandParameter = nameof(AboutPage) },
+        };
+
 
         BindingContext = this;
     }
