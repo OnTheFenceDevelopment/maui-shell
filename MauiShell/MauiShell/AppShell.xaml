@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
+
 <Shell
     x:Class="MauiShell.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
@@ -11,12 +12,42 @@
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
 
+    <Shell.ItemTemplate>
+        <DataTemplate>
+            <Label
+                Text="{Binding Title}"
+                FontAttributes="Bold"
+                HeightRequest="50"
+                Margin="20, 5"
+                TextTransform="Uppercase"
+                BackgroundColor="{StaticResource Primary}"
+                TextColor="WhiteSmoke"
+                HorizontalTextAlignment="Center"
+                VerticalTextAlignment="Center" />
+        </DataTemplate>
+    </Shell.ItemTemplate>
+
+    <Shell.MenuItemTemplate>
+        <DataTemplate>
+            <Label
+                Text="{Binding Title}"
+                FontAttributes="Bold"
+                HeightRequest="50"
+                Margin="20, 5"
+                TextTransform="Uppercase"
+                BackgroundColor="{StaticResource Primary}"
+                TextColor="WhiteSmoke"
+                HorizontalTextAlignment="Center"
+                VerticalTextAlignment="Center" />
+        </DataTemplate>
+    </Shell.MenuItemTemplate>
+
     <MenuItem Text="About" Command="{Binding MenuItemClicked}" CommandParameter="AboutPage"></MenuItem>
-    
+
     <ShellItem Route="PlayerEntry" FlyoutItemIsVisible="False">
         <ShellContent ContentTemplate="{DataTemplate local:PlayerEntry}"></ShellContent>
     </ShellItem>
-    
+
     <ShellItem Route="Scoreboard" FlyoutItemIsVisible="False">
         <ShellContent ContentTemplate="{DataTemplate local:Scoreboard}"></ShellContent>
     </ShellItem>

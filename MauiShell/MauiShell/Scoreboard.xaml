@@ -5,8 +5,8 @@
              x:Class="MauiShell.Scoreboard">
     <ContentPage.Content>
         <StackLayout Orientation="Vertical">
-            <Label>This is the main Game page</Label>
-            <Label>There should be a menu item to Abandon the current Game and return to the root page</Label>
+            <Label HorizontalOptions="Center" FontSize="25">This is the main Game page</Label>
+            <Label HorizontalOptions="Center" FontSize="18">There should be a menu item to Abandon the current Game and return to the root page</Label>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
